@@ -1,0 +1,2 @@
+Simulator Size              :  CMD +  1/2/3
+Simulator Left/Right  :  CMD +   →/←
