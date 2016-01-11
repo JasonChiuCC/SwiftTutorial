@@ -28,17 +28,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歡迎使用 AutoLayout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VON-o5-hMq">
-                                <rect key="frame" x="420" y="571" width="160" height="21"/>
+                                <rect key="frame" x="400" y="571" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我第一個 APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4A8-sr-Nll">
+                                <rect key="frame" x="208" y="60" width="184" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VON-o5-hMq" secondAttribute="bottom" constant="8" id="1A4-if-s7X"/>
-                            <constraint firstItem="VON-o5-hMq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9GE-we-g2J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VON-o5-hMq" secondAttribute="trailing" constant="20" id="9GE-we-g2J"/>
+                            <constraint firstItem="4A8-sr-Nll" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="WjY-4y-oQI"/>
                             <constraint firstItem="PgP-vw-ZsB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aWK-rz-jUt"/>
+                            <constraint firstItem="4A8-sr-Nll" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h64-aI-yhv"/>
                             <constraint firstItem="PgP-vw-ZsB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xrg-F6-LMh"/>
                         </constraints>
                     </view>
