@@ -11,6 +11,7 @@
 		E60084CB1C47CADA0064D17A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60084C91C47CADA0064D17A /* Main.storyboard */; };
 		E60084CD1C47CADA0064D17A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60084CC1C47CADA0064D17A /* Assets.xcassets */; };
 		E60084D01C47CADA0064D17A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60084CE1C47CADA0064D17A /* LaunchScreen.storyboard */; };
+		E60084D81C47CD530064D17A /* RestaurantTlbVwCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60084D71C47CD530064D17A /* RestaurantTlbVwCtrl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		E60084CC1C47CADA0064D17A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E60084CF1C47CADA0064D17A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E60084D11C47CADA0064D17A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E60084D71C47CD530064D17A /* RestaurantTlbVwCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTlbVwCtrl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +54,12 @@
 		E60084C41C47CADA0064D17A /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				E60084D11C47CADA0064D17A /* Info.plist */,
 				E60084C51C47CADA0064D17A /* AppDelegate.swift */,
-				E60084C91C47CADA0064D17A /* Main.storyboard */,
+				E60084D71C47CD530064D17A /* RestaurantTlbVwCtrl.swift */,
 				E60084CC1C47CADA0064D17A /* Assets.xcassets */,
 				E60084CE1C47CADA0064D17A /* LaunchScreen.storyboard */,
-				E60084D11C47CADA0064D17A /* Info.plist */,
+				E60084C91C47CADA0064D17A /* Main.storyboard */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E60084C61C47CADA0064D17A /* AppDelegate.swift in Sources */,
+				E60084D81C47CD530064D17A /* RestaurantTlbVwCtrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
