@@ -20,16 +20,25 @@ class RestaurantTlbVwCtrl: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
+    /* TLB 中有幾個區塊（可以多個，預設 1 個）[可選方法]*/
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
 
+    // MARK: - 提供表格資料
+    /* TLB 中每個區段有幾列（Row） */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return restaurantNames.count
     }
 
+    /* TLB 在顯示時會被呼叫 */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cellId  = "Cell"
+        let cell    = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath)
+        
+        // 設定 cell
+        cell.textLabel?.text = restaurantNames[indexPath.row]
+        cell.imageView?.image = UIImage(named: "restaurant.jpg")
         return cell
     }
 
