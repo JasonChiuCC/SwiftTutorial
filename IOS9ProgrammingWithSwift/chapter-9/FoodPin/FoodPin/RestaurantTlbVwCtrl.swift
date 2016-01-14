@@ -41,6 +41,10 @@ class RestaurantTlbVwCtrl: UITableViewController {
         // 設定 cell
         cell.nameLabel.text             = restaurantNames[indexPath.row]
         cell.thumbnailImageView.image   = UIImage(named: restaurantImages[indexPath.row])
+        
+        // 設定圖片圓角
+        cell.thumbnailImageView.layer.cornerRadius  = 30.0
+        cell.thumbnailImageView.clipsToBounds       = true
         return cell
     }
 
