@@ -36,11 +36,11 @@ class RestaurantTlbVwCtrl: UITableViewController {
     /* TLB 在顯示時會被呼叫 */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellId  = "Cell"
-        let cell    = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath)
+        let cell    = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as! RestaurantTlbVwCell
         
         // 設定 cell
-        cell.textLabel?.text = restaurantNames[indexPath.row]
-        cell.imageView?.image = UIImage(named: restaurantImages[indexPath.row])
+        cell.nameLabel.text             = restaurantNames[indexPath.row]
+        cell.thumbnailImageView.image   = UIImage(named: restaurantImages[indexPath.row])
         return cell
     }
 
