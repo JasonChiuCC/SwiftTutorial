@@ -54,7 +54,46 @@ class RestaurantTlbVwCtrl: UITableViewController {
         return cell
     }
 
-
+    // MARK: - TlbVwDelg
+    // 按下某一列被呼叫
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        /* 
+          建立一個選單（目前是空的）
+          ActionSheet: 選單顯示在下面
+          Alert      : 選單顯示在中間
+        */
+        let optionMenu = UIAlertController(title: nil, message: "你想做什麼", preferredStyle: .Alert)
+        
+        //（1）加入取消動作到選單中
+        let cancelAction = UIAlertAction(title: "取消", style: .Cancel, handler: nil)
+        optionMenu.addAction(cancelAction)
+        
+        //（2）加入打電話動作到選單中
+        let callHandler  = { (action:UIAlertAction!) -> Void in
+            let Msg = UIAlertController(title: "服務無法使用", message: "對不起", preferredStyle: .Alert)
+            Msg.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(Msg, animated: true, completion: nil)
+        }
+        let callAction   = UIAlertAction(title: "打電話 " + "123-000-\(indexPath.row)", style: .Default, handler: callHandler)
+        optionMenu.addAction(callAction)
+        
+        //（3）加入我來過動作到選單中
+        let visitHandler  = { (action:UIAlertAction!) -> Void in
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            cell?.accessoryType = .Checkmark
+        }
+        let visitAction   = UIAlertAction(title: "我來過了", style: .Default, handler: visitHandler)
+        optionMenu.addAction(visitAction)
+        
+        /* 
+          呈現選單
+          animated 設為 true 時選單會縮放的感覺
+        */
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+        
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
