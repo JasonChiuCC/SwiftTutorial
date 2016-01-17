@@ -13,8 +13,7 @@ let imageURLs = ["http://www.planetware.com/photos-large/F/france-paris-eiffel-t
                  "http://algoos.com/wp-content/uploads/2015/08/ireland-02.jpg",
                  "http://bdo.se/wp-content/uploads/2014/01/Stockholm1.jpg"]
 
-// 建立 Operation 隊列
-var queue = NSOperationQueue()
+
 
 class Downloader {
     class func downloadImageWithURL(url:String) -> UIImage! {
@@ -24,7 +23,10 @@ class Downloader {
 }
 
 class ViewController: UIViewController {
-
+    // 建立 Operation 隊列
+    var queue = NSOperationQueue()
+    
+    
     @IBOutlet weak var imageView1: UIImageView!
     
     @IBOutlet weak var imageView2: UIImageView!
@@ -45,6 +47,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // 按下取消後停止 Operation 隊列中的所有任務
+    @IBAction func didClickOnCancel(sender: AnyObject) {
+        self.queue.cancelAllOperations()
+    }
     
     @IBAction func didClickOnStart(sender: AnyObject) {
         
@@ -161,6 +167,7 @@ class ViewController: UIViewController {
 #if true
 // 使用 Operation 隊列（NSBlockOperation）
     
+    
         // 建立一個 NSBlockOperation 類型的變數（任務）
         let operation1 = NSBlockOperation(block: {
             let img1 = Downloader.downloadImageWithURL(imageURLs[0])
@@ -171,7 +178,7 @@ class ViewController: UIViewController {
     
         // 如果此變數（任務）執行完成後（根據 finished 屬性是否為 true），就執行下面區塊
         operation1.completionBlock = {
-            print("Operation 1 completed")
+            print("Operation 1 completed, cancelled:\(operation1.cancelled) ")
         }
     
         // 將此變數（任務）加入到 Operation 隊列
@@ -184,11 +191,12 @@ class ViewController: UIViewController {
                 self.imageView2.image = img2
             })
         })
+        // 任務 1 做完任務 2 才會做
+        operation2.addDependency(operation1)
         operation2.completionBlock = {
-            print("Operation 2 completed")
+            print("Operation 2 completed, cancelled:\(operation2.cancelled) ")
         }
         queue.addOperation(operation2)
-
 
         let operation3 = NSBlockOperation(block: {
             let img3 = Downloader.downloadImageWithURL(imageURLs[2])
@@ -196,8 +204,10 @@ class ViewController: UIViewController {
                 self.imageView3.image = img3
             })
         })
+        // 任務 2 做完任務 3 才會做
+        operation3.addDependency(operation2)
         operation3.completionBlock = {
-            print("Operation 3 completed")
+            print("Operation 3 completed, cancelled:\(operation3.cancelled) ")
         }
         queue.addOperation(operation3)
 
@@ -208,8 +218,9 @@ class ViewController: UIViewController {
             })
         })
 
+        // 任務 4 不受其他任務影響
         operation4.completionBlock = {
-            print("Operation 4 completed")
+            print("Operation 4 completed, cancelled:\(operation4.cancelled) ")
         }
         queue.addOperation(operation4)
 #endif

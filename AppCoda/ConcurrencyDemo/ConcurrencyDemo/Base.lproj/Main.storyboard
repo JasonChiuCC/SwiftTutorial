@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -38,8 +39,8 @@
                                     <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="rh7-S2-Jcg"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCI-c7-UFu">
-                                <rect key="frame" x="279" y="463" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCI-c7-UFu">
+                                <rect key="frame" x="290" y="463" width="21" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -71,11 +72,18 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="740-DU-CFc">
-                        <barButtonItem key="rightBarButtonItem" title="Start" id="BUt-RJ-v1h">
-                            <connections>
-                                <action selector="didClickOnStart:" destination="BYZ-38-t0r" id="dbx-va-pcb"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="取消" id="vQC-b4-bZ6">
+                                <connections>
+                                    <action selector="didClickOnCancel:" destination="BYZ-38-t0r" id="Nel-Hl-2By"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="開始" id="BUt-RJ-v1h">
+                                <connections>
+                                    <action selector="didClickOnStart:" destination="BYZ-38-t0r" id="dbx-va-pcb"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView1" destination="S10-3H-623" id="lVZ-hd-XjF"/>
