@@ -82,12 +82,24 @@ class RestaurantTlbVwCtrl: UITableViewController {
         
         //（3）加入我來過動作到選單中
         let visitHandler  = { (action:UIAlertAction!) -> Void in
+            
             let cell = tableView.cellForRowAtIndexPath(indexPath)
-            cell?.accessoryType = .Checkmark
-            self.restaurantIsVisit[indexPath.row] = true
+            if(self.restaurantIsVisit[indexPath.row] == false){
+                cell?.accessoryType = .Checkmark
+                self.restaurantIsVisit[indexPath.row] = true
+            }else{
+                cell?.accessoryType = .None
+                self.restaurantIsVisit[indexPath.row] = false
+            }
         }
-        let visitAction   = UIAlertAction(title: "我來過了", style: .Default, handler: visitHandler)
-        optionMenu.addAction(visitAction)
+        
+        let visitAction:UIAlertAction?
+        if(restaurantIsVisit[indexPath.row] == false){
+            visitAction = UIAlertAction(title: "我來過了", style: .Default, handler: visitHandler)
+        }else{
+            visitAction = UIAlertAction(title: "我沒來過", style: .Default, handler: visitHandler)
+        }
+        optionMenu.addAction(visitAction!)
         
         /* 
           呈現選單
