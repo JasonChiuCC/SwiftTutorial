@@ -45,6 +45,8 @@ class ViewController: UIViewController {
     
     @IBAction func didClickOnStart(sender: AnyObject) {
         
+#if false
+// 使用並行隊列（下載）+串行隊列（更新UI）
         // dispatch_get_global_queue 取得 Default 優先權的[並行隊列]
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         dispatch_async(queue) { () -> Void in
@@ -78,8 +80,45 @@ class ViewController: UIViewController {
                 self.imageView4.image = img4
             })
         }
-        
+#else
+// 使用新建串行隊列（下載）+ 原始串行隊列（更新UI）
+    
+        // 建立新的串行隊列
+        let serialQueue = dispatch_queue_create("com.appcoda.imagesQueue", DISPATCH_QUEUE_SERIAL)
+
+        dispatch_async(serialQueue) { () -> Void in
+            let img1 = Downloader .downloadImageWithURL(imageURLs[0])
+            // 使用原始的串行隊列更新UI
+            dispatch_async(dispatch_get_main_queue(), {
+                self.imageView1.image = img1
+            })
+        }
+
+        dispatch_async(serialQueue) { () -> Void in
+            let img2 = Downloader.downloadImageWithURL(imageURLs[1])
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                self.imageView2.image = img2
+            })
+        }
+
+        dispatch_async(serialQueue) { () -> Void in
+            let img3 = Downloader.downloadImageWithURL(imageURLs[2])
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                self.imageView3.image = img3
+            })
+        }
+
+        dispatch_async(serialQueue) { () -> Void in
+            let img4 = Downloader.downloadImageWithURL(imageURLs[3])
+            dispatch_async(dispatch_get_main_queue(), {
+                self.imageView4.image = img4
+            })
+        }
+#endif
     }
+    
     @IBAction func sliderValueChanged(sender: UISlider) {
         
         self.sliderValueLabel.text = "\(sender.value * 100.0)"
