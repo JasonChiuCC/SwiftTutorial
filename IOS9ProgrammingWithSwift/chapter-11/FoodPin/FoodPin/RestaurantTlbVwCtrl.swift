@@ -33,7 +33,7 @@ class RestaurantTlbVwCtrl: UITableViewController {
         return 1
     }
 
-    // MARK: - 提供表格資料
+    // MARK: - TlbVwDataSource（提供表格資料）
     /* TLB 中每個區段有幾列（Row） */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return restaurantNames.count
@@ -57,6 +57,28 @@ class RestaurantTlbVwCtrl: UITableViewController {
         return cell
     }
 
+    // 啟動滑動刪除功能
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // 刪除資料
+            restaurantNames.removeAtIndex(indexPath.row)
+            restaurantLocations.removeAtIndex(indexPath.row)
+            restaurantTypes.removeAtIndex(indexPath.row)
+            restaurantImages.removeAtIndex(indexPath.row)
+            restaurantIsVisit.removeAtIndex(indexPath.row)
+            
+            // 記得表格視圖要重新載入(以下兩種方法都可以)
+            //(1)
+            //tableView.reloadData()
+            
+            //(2)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
     // MARK: - TlbVwDelg
     // 按下某一列被呼叫
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -100,29 +122,36 @@ class RestaurantTlbVwCtrl: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
     
-    // MARK: - TlbVwDataSource
-    // 啟動滑動刪除功能
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // 刪除資料
-            restaurantNames.removeAtIndex(indexPath.row)
-            restaurantLocations.removeAtIndex(indexPath.row)
-            restaurantTypes.removeAtIndex(indexPath.row)
-            restaurantImages.removeAtIndex(indexPath.row)
-            restaurantIsVisit.removeAtIndex(indexPath.row)
+    // 表格視圖列的自訂動作，如果有覆寫此方法，tableView(_,commitEditingStyle) 就不會有作用
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?{
+        // 分享動作
+        let shareHandler  = { (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
+            // 預設使用文字
+            let defaultText  = "打卡在：" + self.restaurantNames[indexPath.row]
             
-            // 記得表格視圖要重新載入(以下兩種方法都可以)
-            //(1)
-            //tableView.reloadData()
+            // 預設圖片
+            let imageShare   = UIImage(named: self.restaurantImages[indexPath.row])!
             
-            //(2)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            // activityItems 內的順序不影響 Facebook 貼文的呈現順序
+            let activityCtrl = UIActivityViewController(activityItems: [defaultText,imageShare], applicationActivities: nil)
+            self.presentViewController(activityCtrl, animated: true, completion: nil)
         }
+        let shareAction = UITableViewRowAction(style: .Default, title: "分享", handler: shareHandler)
+        
+        // 刪除動作
+        let deleteHandler  = { (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
+            self.restaurantNames.removeAtIndex(indexPath.row)
+            self.restaurantLocations.removeAtIndex(indexPath.row)
+            self.restaurantTypes.removeAtIndex(indexPath.row)
+            self.restaurantImages.removeAtIndex(indexPath.row)
+            self.restaurantIsVisit.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+        let deleteAction = UITableViewRowAction(style: .Default, title: "刪除", handler: deleteHandler)
+        
+        // 出現順序會相反 [分享|刪除]
+        return [deleteAction,shareAction]
     }
-
     
     /*
     // Override to support conditional editing of the table view.
@@ -131,8 +160,6 @@ class RestaurantTlbVwCtrl: UITableViewController {
         return true
     }
     */
-
-
 
     /*
     // Override to support rearranging the table view.
