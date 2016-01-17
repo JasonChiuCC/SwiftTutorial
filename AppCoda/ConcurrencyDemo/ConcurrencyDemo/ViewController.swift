@@ -123,39 +123,95 @@ class ViewController: UIViewController {
         }
 #endif
         
-#if true
+#if false
 // 使用 Operation 隊列
     
-    // 使用 addOperationWithBlock 指定的一個閉包來創建一個新的 Operation 實例
-    queue.addOperationWithBlock { () -> Void in
-        let img1 = Downloader.downloadImageWithURL(imageURLs[0])
-        
-        // NSOperationQueue.mainQueue() 代替 GCD 中的 dispatch_async() 方法來獲取主隊列
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.imageView1.image = img1
-        })
-    }
+        // 使用 addOperationWithBlock 指定的一個閉包來創建一個新的 Operation 實例
+        queue.addOperationWithBlock { () -> Void in
+            let img1 = Downloader.downloadImageWithURL(imageURLs[0])
+            
+            // NSOperationQueue.mainQueue() 代替 GCD 中的 dispatch_async() 方法來獲取主隊列
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView1.image = img1
+            })
+        }
+
+        queue.addOperationWithBlock { () -> Void in
+            let img2 = Downloader.downloadImageWithURL(imageURLs[1])
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView2.image = img2
+            })
+        }
+
+        queue.addOperationWithBlock { () -> Void in
+            let img3 = Downloader.downloadImageWithURL(imageURLs[2])
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView3.image = img3
+            })
+        }
+
+        queue.addOperationWithBlock { () -> Void in
+            let img4 = Downloader.downloadImageWithURL(imageURLs[3])
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView4.image = img4
+            })
+        }
+#endif
+
+#if true
+// 使用 Operation 隊列（NSBlockOperation）
     
-    queue.addOperationWithBlock { () -> Void in
-        let img2 = Downloader.downloadImageWithURL(imageURLs[1])
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.imageView2.image = img2
+        // 建立一個 NSBlockOperation 類型的變數（任務）
+        let operation1 = NSBlockOperation(block: {
+            let img1 = Downloader.downloadImageWithURL(imageURLs[0])
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView1.image = img1
+            })
         })
-    }
     
-    queue.addOperationWithBlock { () -> Void in
-        let img3 = Downloader.downloadImageWithURL(imageURLs[2])
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.imageView3.image = img3
-        })
-    }
+        // 如果此變數（任務）執行完成後（根據 finished 屬性是否為 true），就執行下面區塊
+        operation1.completionBlock = {
+            print("Operation 1 completed")
+        }
     
-    queue.addOperationWithBlock { () -> Void in
-        let img4 = Downloader.downloadImageWithURL(imageURLs[3])
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.imageView4.image = img4
+        // 將此變數（任務）加入到 Operation 隊列
+        queue.addOperation(operation1)
+
+    
+        let operation2 = NSBlockOperation(block: {
+            let img2 = Downloader.downloadImageWithURL(imageURLs[1])
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView2.image = img2
+            })
         })
-    }
+        operation2.completionBlock = {
+            print("Operation 2 completed")
+        }
+        queue.addOperation(operation2)
+
+
+        let operation3 = NSBlockOperation(block: {
+            let img3 = Downloader.downloadImageWithURL(imageURLs[2])
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView3.image = img3
+            })
+        })
+        operation3.completionBlock = {
+            print("Operation 3 completed")
+        }
+        queue.addOperation(operation3)
+
+        let operation4 = NSBlockOperation(block: {
+            let img4 = Downloader.downloadImageWithURL(imageURLs[3])
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView4.image = img4
+            })
+        })
+
+        operation4.completionBlock = {
+            print("Operation 4 completed")
+        }
+        queue.addOperation(operation4)
 #endif
     }
     
