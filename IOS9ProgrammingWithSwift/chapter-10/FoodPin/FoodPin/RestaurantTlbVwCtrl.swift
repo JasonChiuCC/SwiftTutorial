@@ -18,6 +18,8 @@ class RestaurantTlbVwCtrl: UITableViewController {
     
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
+    var restaurantIsVisit = [Bool](count: 21, repeatedValue: false)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -47,6 +49,7 @@ class RestaurantTlbVwCtrl: UITableViewController {
         cell.thumbnailImageView.image   = UIImage(named: restaurantImages[indexPath.row])
         cell.locationLabel.text         = restaurantLocations[indexPath.row]
         cell.typeLabel.text             = restaurantTypes[indexPath.row]
+        cell.accessoryType              = restaurantIsVisit[indexPath.row] ? .Checkmark : .None
         
         // 設定圖片圓角
         //cell.thumbnailImageView.layer.cornerRadius  = 30.0
@@ -81,6 +84,7 @@ class RestaurantTlbVwCtrl: UITableViewController {
         let visitHandler  = { (action:UIAlertAction!) -> Void in
             let cell = tableView.cellForRowAtIndexPath(indexPath)
             cell?.accessoryType = .Checkmark
+            self.restaurantIsVisit[indexPath.row] = true
         }
         let visitAction   = UIAlertAction(title: "我來過了", style: .Default, handler: visitHandler)
         optionMenu.addAction(visitAction)
