@@ -91,6 +91,8 @@ class RestaurantTlbVwCtrl: UITableViewController {
         */
         self.presentViewController(optionMenu, animated: true, completion: nil)
         
+        // 取消選取後反灰狀態
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
     
     
