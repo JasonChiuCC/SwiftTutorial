@@ -149,6 +149,10 @@ class RestaurantTlbVwCtrl: UITableViewController {
         }
         let deleteAction = UITableViewRowAction(style: .Default, title: "刪除", handler: deleteHandler)
         
+        // 設定動作顏色（預設是紅色）
+        shareAction.backgroundColor  = UIColor(red: 28.0/255.0,  green: 165.0/255.0, blue: 253.0/255.0, alpha: 1.0) // 藍色
+        deleteAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 203.0/255.0, alpha: 1.0) // 灰色
+        
         // 出現順序會相反 [分享|刪除]
         return [deleteAction,shareAction]
     }
