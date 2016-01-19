@@ -81,6 +81,7 @@ class RestaurantTlbVwCtrl: UITableViewController {
     
     // MARK: - TlbVwDelg
     // 按下某一列被呼叫
+    /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         /* 
           建立一個選單（目前是空的）
@@ -121,6 +122,7 @@ class RestaurantTlbVwCtrl: UITableViewController {
         // 取消選取後反灰狀態
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
+    */
     
     // 表格視圖列的自訂動作，如果有覆寫此方法，tableView(_,commitEditingStyle) 就不會有作用
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?{
