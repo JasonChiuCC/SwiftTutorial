@@ -1,7 +1,7 @@
 隱藏專案導覽  : CMD + 0
 預覽介面移動  : Shift + 滑鼠滾輪
 推疊視圖選擇  : 按住 Shift + 滑鼠右鍵
-
+註解一段程式碼:  選取程式碼 CMD+/
 Debug               :  移動到左邊 Show breakpoint navigator，左下角按 + 
                                 Add Swift error breakpoint
                                 Add Exception breakpoint
