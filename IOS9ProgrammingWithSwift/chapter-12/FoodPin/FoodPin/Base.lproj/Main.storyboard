@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1wB-dz-Bji">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gOm-BR-F59">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Restaurant Tlb Vw Ctrl-->
+        <!--Food Pin-->
         <scene sceneID="4qQ-Zg-lm4">
             <objects>
                 <tableViewController id="1wB-dz-Bji" customClass="RestaurantTlbVwCtrl" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,7 +16,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="HzA-RZ-Y4U" customClass="RestaurantTlbVwCell" customModule="FoodPin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HzA-RZ-Y4U" id="irL-nc-knb">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
@@ -78,10 +78,11 @@
                             <outlet property="delegate" destination="1wB-dz-Bji" id="Spt-6d-4Qx"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Food Pin" id="WvH-et-leg"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAW-y5-HoX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="462" y="432"/>
+            <point key="canvasLocation" x="1274" y="432"/>
         </scene>
         <!--Restaurant Tlb Vw Ctrl-->
         <scene sceneID="YHv-gR-txf">
@@ -151,7 +152,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFb-aD-0jm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="432"/>
+            <point key="canvasLocation" x="1998" y="432"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E8a-4V-SqP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gOm-BR-F59" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6jK-iQ-8ai">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1wB-dz-Bji" kind="relationship" relationship="rootViewController" id="q4C-qt-zLO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k9j-kG-I3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="432"/>
         </scene>
     </scenes>
 </document>
