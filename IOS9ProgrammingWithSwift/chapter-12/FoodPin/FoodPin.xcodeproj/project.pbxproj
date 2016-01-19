@@ -13,6 +13,7 @@
 		E60084D01C47CADA0064D17A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60084CE1C47CADA0064D17A /* LaunchScreen.storyboard */; };
 		E60084D81C47CD530064D17A /* RestaurantTlbVwCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60084D71C47CD530064D17A /* RestaurantTlbVwCtrl.swift */; };
 		E60084DC1C47ED360064D17A /* RestaurantTlbVwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60084DB1C47ED360064D17A /* RestaurantTlbVwCell.swift */; };
+		E6C5D8241C4E8805007356BF /* RestaurantDetailVwCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C5D8231C4E8805007356BF /* RestaurantDetailVwCtrl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E60084D11C47CADA0064D17A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E60084D71C47CD530064D17A /* RestaurantTlbVwCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTlbVwCtrl.swift; sourceTree = "<group>"; };
 		E60084DB1C47ED360064D17A /* RestaurantTlbVwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTlbVwCell.swift; sourceTree = "<group>"; };
+		E6C5D8231C4E8805007356BF /* RestaurantDetailVwCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailVwCtrl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				E60084D11C47CADA0064D17A /* Info.plist */,
 				E60084C51C47CADA0064D17A /* AppDelegate.swift */,
+				E6C5D8231C4E8805007356BF /* RestaurantDetailVwCtrl.swift */,
 				E60084DB1C47ED360064D17A /* RestaurantTlbVwCell.swift */,
 				E60084D71C47CD530064D17A /* RestaurantTlbVwCtrl.swift */,
 				E60084CC1C47CADA0064D17A /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E60084C61C47CADA0064D17A /* AppDelegate.swift in Sources */,
+				E6C5D8241C4E8805007356BF /* RestaurantDetailVwCtrl.swift in Sources */,
 				E60084DC1C47ED360064D17A /* RestaurantTlbVwCell.swift in Sources */,
 				E60084D81C47CD530064D17A /* RestaurantTlbVwCtrl.swift in Sources */,
 			);
@@ -290,6 +294,7 @@
 				E60084D61C47CADA0064D17A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
