@@ -187,7 +187,10 @@ class RestaurantTlbVwCtrl: UITableViewController {
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow{
                     let destCtrl = segue.destinationViewController as! RestaurantDetailVwCtrl
-                    destCtrl.restaurantImage = restaurantImages[indexPath.row]
+                    destCtrl.restaurantImage    = restaurantImages[indexPath.row]
+                    destCtrl.resName            = restaurantNames[indexPath.row]
+                    destCtrl.resType            = restaurantNames[indexPath.row]
+                    destCtrl.resLocation        = restaurantNames[indexPath.row]
             }
         }
     }
