@@ -23,10 +23,11 @@ class RestaurantDetailVwCtrl: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        restaurantImageView.image   = UIImage(named: restaurantImage)
-        restaurantName.text         = resName
-        restaurantType.text         = resType
-        restaurantLocation.text     = resLocation
+        restaurantImageView.image           = UIImage(named: restaurantImage)
+        restaurantImageView.clipsToBounds   = true
+        restaurantName.text                 = resName
+        restaurantType.text                 = resType
+        restaurantLocation.text             = resLocation
     }
 
     override func didReceiveMemoryWarning() {
