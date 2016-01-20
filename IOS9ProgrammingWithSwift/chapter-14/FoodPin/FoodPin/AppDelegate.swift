@@ -8,14 +8,29 @@
 
 import UIKit
 
+// 變更部份是關係整個應用的寫在此處
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // 更改導航列顏色
+        UINavigationBar.appearance().barTintColor = UIColor(red: 242.0/255.0, green: 116.0/255.0, blue: 119.0/255.0, alpha: 1.0)
+        
+        // 更改導航列返回按鈕顏色
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        
+        // 更改標題樣式
+        if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
+            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName:barFont]
+        }
+        
+        // Change the status bar's appearance
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         return true
     }
 
