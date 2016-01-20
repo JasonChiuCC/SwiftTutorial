@@ -15,19 +15,16 @@ class RestaurantDetailVwCtrl: UIViewController {
     @IBOutlet weak var restaurantName       : UILabel!
     @IBOutlet weak var restaurantImageView  : UIImageView!
     
-    var restaurantImage = ""
-    var resName         = ""
-    var resLocation     = ""
-    var resType         = ""
+    var restaurant:Restaurant!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        restaurantImageView.image           = UIImage(named: restaurantImage)
+        restaurantImageView.image           = UIImage(named: restaurant.image)
         restaurantImageView.clipsToBounds   = true
-        restaurantName.text                 = resName
-        restaurantType.text                 = resType
-        restaurantLocation.text             = resLocation
+        restaurantName.text                 = restaurant.name
+        restaurantType.text                 = restaurant.type
+        restaurantLocation.text             = restaurant.location
     }
 
     override func didReceiveMemoryWarning() {
