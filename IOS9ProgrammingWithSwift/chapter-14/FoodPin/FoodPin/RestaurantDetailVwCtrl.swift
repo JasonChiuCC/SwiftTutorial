@@ -11,6 +11,7 @@ import UIKit
 class RestaurantDetailVwCtrl: UIViewController {
     
       @IBOutlet weak var restaurantImageView  : UIImageView!
+      @IBOutlet weak var tableView            : UITableView!
 //    @IBOutlet weak var restaurantType       : UILabel!
 //    @IBOutlet weak var restaurantLocation   : UILabel!
 //    @IBOutlet weak var restaurantName       : UILabel!
@@ -22,6 +23,16 @@ class RestaurantDetailVwCtrl: UIViewController {
 
         restaurantImageView.image           = UIImage(named: restaurant.image)
         restaurantImageView.clipsToBounds   = true
+        
+        // 更改 TLB 背景顏色
+        tableView.backgroundColor = UIColor(red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 0.2) // 淺灰色
+        
+        // 刪除 TLB 分隔線
+        tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        // 更改 TLB 分隔線顏色
+        tableView.separatorColor  = UIColor(red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 0.2) // 淺灰色
+        
 //        restaurantName.text                 = restaurant.name
 //        restaurantType.text                 = restaurant.type
 //        restaurantLocation.text             = restaurant.location
@@ -45,6 +56,9 @@ extension RestaurantDetailVwCtrl:UITableViewDataSource,UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellId  = "Cell"
         let cell    = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as! RestaurantDetailTlbVwCell
+        
+        // 讓 Cell 背景透明（使用 TLB 背景顏色）
+        cell.backgroundColor = UIColor.clearColor()
         
         // 設定 cell
         switch (indexPath.row) {
