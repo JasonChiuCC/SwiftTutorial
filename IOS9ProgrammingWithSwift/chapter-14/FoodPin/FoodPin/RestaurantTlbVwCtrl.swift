@@ -36,6 +36,8 @@ class RestaurantTlbVwCtrl: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 將返回按鈕的文字清除
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
 
     override func didReceiveMemoryWarning() {

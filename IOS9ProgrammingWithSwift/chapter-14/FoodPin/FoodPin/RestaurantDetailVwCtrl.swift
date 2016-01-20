@@ -33,9 +33,9 @@ class RestaurantDetailVwCtrl: UIViewController {
         // 更改 TLB 分隔線顏色
         tableView.separatorColor  = UIColor(red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 0.2) // 淺灰色
         
-//        restaurantName.text                 = restaurant.name
-//        restaurantType.text                 = restaurant.type
-//        restaurantLocation.text             = restaurant.location
+        // 設定導航列標題文字
+        title = restaurant.name
+        
     }
 
     override func didReceiveMemoryWarning() {
