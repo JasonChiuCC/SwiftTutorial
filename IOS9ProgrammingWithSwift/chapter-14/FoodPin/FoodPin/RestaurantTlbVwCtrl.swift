@@ -47,6 +47,11 @@ class RestaurantTlbVwCtrl: UITableViewController {
         navigationController?.hidesBarsOnSwipe = true
     }
 
+    // 更改狀態列顏色（目前無用）
+//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+//        return .LightContent
+//    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
