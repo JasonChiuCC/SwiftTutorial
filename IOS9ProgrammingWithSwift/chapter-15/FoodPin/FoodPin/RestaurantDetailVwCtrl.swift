@@ -36,6 +36,9 @@ class RestaurantDetailVwCtrl: UIViewController {
         // 設定導航列標題文字
         title = restaurant.name
         
+        // 使用 self sizing cells
+        tableView.estimatedRowHeight = 36.0                     // 估算 Cell 的高度，也是目前 Cell 的高度
+        tableView.rowHeight = UITableViewAutomaticDimension     // IOS 9 預設高度
     }
     
     // 視圖準備要顯示時呼叫

@@ -113,8 +113,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lYb-NK-q3B">
-                                                    <rect key="frame" x="13" y="0.0" width="579" height="21"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYb-NK-q3B">
+                                                    <rect key="frame" x="13" y="7" width="579" height="21"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB1-0C-8Dp">
                                                             <rect key="frame" x="0.0" y="0.0" width="193" height="21"/>
@@ -122,7 +122,7 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mk-bF-Vvz">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mk-bF-Vvz">
                                                             <rect key="frame" x="193" y="0.0" width="386" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -137,6 +137,8 @@
                                             <constraints>
                                                 <constraint firstItem="lYb-NK-q3B" firstAttribute="leading" secondItem="1Ky-2F-iEG" secondAttribute="leadingMargin" constant="5" id="Ku6-yo-vNo"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="lYb-NK-q3B" secondAttribute="trailing" id="LMi-mR-T7Z"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="lYb-NK-q3B" secondAttribute="bottom" constant="-1" id="LTN-Ub-Jxk"/>
+                                                <constraint firstItem="lYb-NK-q3B" firstAttribute="top" secondItem="1Ky-2F-iEG" secondAttribute="topMargin" constant="-1" id="WIF-W5-ay8"/>
                                                 <constraint firstItem="lYb-NK-q3B" firstAttribute="centerY" secondItem="1Ky-2F-iEG" secondAttribute="centerY" id="yPy-Go-01R"/>
                                             </constraints>
                                         </tableViewCellContentView>
