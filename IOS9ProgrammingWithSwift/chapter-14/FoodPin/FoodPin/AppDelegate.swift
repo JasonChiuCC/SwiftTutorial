@@ -28,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName:barFont]
         }
         
-        // Change the status bar's appearance
+        /* 更改狀態列顏色，整個 APP 都有作用
+        注意要先去 Target -> Info -> 新增 View controller-based status bar appearance 並關閉才有作用 */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         return true

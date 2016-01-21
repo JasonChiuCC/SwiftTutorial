@@ -47,7 +47,8 @@ class RestaurantTlbVwCtrl: UITableViewController {
         navigationController?.hidesBarsOnSwipe = true
     }
 
-    // 更改狀態列顏色（目前無用）
+    /* 更改狀態列顏色，只有此試圖控制器有作用
+       注意要先去 Target -> Info -> 新增 View controller-based status bar appearance 並關閉才有作用 */
 //    override func preferredStatusBarStyle() -> UIStatusBarStyle {
 //        return .LightContent
 //    }
