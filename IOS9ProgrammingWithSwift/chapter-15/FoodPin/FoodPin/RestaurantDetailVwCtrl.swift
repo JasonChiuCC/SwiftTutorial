@@ -80,7 +80,7 @@ extension RestaurantDetailVwCtrl:UITableViewDataSource,UITableViewDelegate {
             cell.valueLabel.text = restaurant.location
         case 3:
             cell.fieldLabel.text = "電話"
-            cell.valueLabel.text = restaurant.tel
+            cell.valueLabel.text = restaurant.phoneNumber
         case 4:
             cell.fieldLabel.text = "是否來過"
             cell.valueLabel.text = restaurant.isVisited ? "來過了" : "沒來過"
