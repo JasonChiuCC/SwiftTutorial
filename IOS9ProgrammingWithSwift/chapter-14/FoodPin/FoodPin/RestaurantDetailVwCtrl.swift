@@ -56,7 +56,7 @@ extension RestaurantDetailVwCtrl:UITableViewDataSource,UITableViewDelegate {
     // MARK: - TlbVwDataSource（提供表格資料）
     /* TLB 中每個區段有幾列（Row） */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     /* TLB 在顯示時會被呼叫 */
@@ -79,6 +79,9 @@ extension RestaurantDetailVwCtrl:UITableViewDataSource,UITableViewDelegate {
             cell.fieldLabel.text = "地點"
             cell.valueLabel.text = restaurant.location
         case 3:
+            cell.fieldLabel.text = "電話"
+            cell.valueLabel.text = restaurant.tel
+        case 4:
             cell.fieldLabel.text = "是否來過"
             cell.valueLabel.text = restaurant.isVisited ? "來過了" : "沒來過"
         default:
