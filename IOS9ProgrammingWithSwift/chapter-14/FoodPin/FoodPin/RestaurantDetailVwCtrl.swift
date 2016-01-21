@@ -37,6 +37,13 @@ class RestaurantDetailVwCtrl: UIViewController {
         title = restaurant.name
         
     }
+    
+    // 視圖準備要顯示時呼叫
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

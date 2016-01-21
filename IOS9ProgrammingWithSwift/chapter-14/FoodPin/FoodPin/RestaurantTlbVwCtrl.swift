@@ -34,10 +34,17 @@ class RestaurantTlbVwCtrl: UITableViewController {
         Restaurant(name: "Thai Cafe", type: "Thai", location: "London", image: "thaicafe.jpg", isVisited: false)
     ]
     
+    // 只有第一次視圖顯示時被呼叫
     override func viewDidLoad() {
         super.viewDidLoad()
         // 將返回按鈕的文字清除
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+    }
+    
+    // 視圖準備要顯示時呼叫
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
     }
 
     override func didReceiveMemoryWarning() {
