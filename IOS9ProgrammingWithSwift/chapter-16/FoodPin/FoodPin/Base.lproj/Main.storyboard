@@ -119,13 +119,13 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB1-0C-8Dp">
                                                             <rect key="frame" x="0.0" y="0.0" width="193" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mk-bF-Vvz">
                                                             <rect key="frame" x="193" y="0.0" width="386" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -153,11 +153,28 @@
                                     <outlet property="delegate" destination="N4T-Rl-FU9" id="SPS-QI-HAY"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCY-Jf-IK6">
+                                <rect key="frame" x="540" y="72" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.92488676309585571" green="0.14600974321365356" blue="0.064618170261383057" alpha="0.92556073589999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8ku-2S-rbQ"/>
+                                    <constraint firstAttribute="width" constant="40" id="atR-SC-EeF"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Button" image="rating"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wCY-Jf-IK6" firstAttribute="trailing" secondItem="kX7-u1-AEN" secondAttribute="trailingMargin" id="0bF-CI-Zb2"/>
                             <constraint firstItem="TiQ-ft-fsL" firstAttribute="top" secondItem="XZ9-XU-Hp3" secondAttribute="bottom" id="5o8-Kh-3dk"/>
                             <constraint firstAttribute="trailing" secondItem="XZ9-XU-Hp3" secondAttribute="trailing" id="HwB-EI-Cun"/>
+                            <constraint firstItem="wCY-Jf-IK6" firstAttribute="top" secondItem="9KO-BQ-3cF" secondAttribute="bottom" constant="8" id="eAC-70-4uO"/>
                             <constraint firstItem="XZ9-XU-Hp3" firstAttribute="leading" secondItem="kX7-u1-AEN" secondAttribute="leading" id="hcY-Jq-iOF"/>
                             <constraint firstItem="XZ9-XU-Hp3" firstAttribute="top" secondItem="kX7-u1-AEN" secondAttribute="top" id="ugb-LS-5Q8"/>
                         </constraints>
@@ -260,4 +277,7 @@
             <point key="canvasLocation" x="462" y="432"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rating" width="256" height="256"/>
+    </resources>
 </document>
