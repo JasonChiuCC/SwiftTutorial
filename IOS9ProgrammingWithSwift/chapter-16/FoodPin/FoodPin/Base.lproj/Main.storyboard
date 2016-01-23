@@ -188,6 +188,74 @@
             </objects>
             <point key="canvasLocation" x="1989" y="432"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="khh-8W-pkt">
+            <objects>
+                <viewController id="cPs-gG-3mc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0AO-LB-czP"/>
+                        <viewControllerLayoutGuide type="bottom" id="ctO-yU-2Ae"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A4G-wy-plr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrafina" translatesAutoresizingMaskIntoConstraints="NO" id="g8p-fN-BcJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="你覺得如何" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1F-qO-0Eq">
+                                <rect key="frame" x="225" y="110" width="150" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqm-3A-oMg">
+                                <rect key="frame" x="151" y="157" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.92488676309585571" green="0.14600974321365356" blue="0.064618170261383057" alpha="0.92556073589999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="dislike"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ko6-xj-dO7">
+                                <rect key="frame" x="265" y="157" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.92488676309585571" green="0.14600974321365356" blue="0.064618170261383057" alpha="0.92556073589999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="good"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rm-7S-dBW">
+                                <rect key="frame" x="381" y="157" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.92488676309585571" green="0.14600974321365356" blue="0.064618170261383057" alpha="0.92556073589999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="great"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="g8p-fN-BcJ" secondAttribute="trailing" id="6n7-2B-G7j"/>
+                            <constraint firstItem="g8p-fN-BcJ" firstAttribute="leading" secondItem="A4G-wy-plr" secondAttribute="leading" id="EGi-cq-KaI"/>
+                            <constraint firstItem="g8p-fN-BcJ" firstAttribute="bottom" secondItem="ctO-yU-2Ae" secondAttribute="top" id="HD9-eg-dW1"/>
+                            <constraint firstItem="g8p-fN-BcJ" firstAttribute="top" secondItem="A4G-wy-plr" secondAttribute="top" id="UuH-XP-H2E"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cvj-ax-Hod" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2680" y="432"/>
+        </scene>
         <!--Restaurant Tlb Vw Ctrl-->
         <scene sceneID="YHv-gR-txf">
             <objects>
@@ -278,6 +346,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="barrafina" width="640" height="640"/>
+        <image name="dislike" width="84" height="84"/>
+        <image name="good" width="256" height="256"/>
+        <image name="great" width="256" height="256"/>
         <image name="rating" width="256" height="256"/>
     </resources>
 </document>
