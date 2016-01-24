@@ -32,6 +32,13 @@ class ReviewVwCtrl: UIViewController {
         let scale       = CGAffineTransformMakeScale(0.0, 0.0)
         let translate   = CGAffineTransformMakeTranslation(0, 500)
         ratingStackView.transform = CGAffineTransformConcat(scale, translate)
+
+        // 4.多動畫合併使用
+        var result = CGAffineTransformIdentity
+        result = CGAffineTransformScale(result, CGFloat(-1), CGFloat(2))
+        result = CGAffineTransformTranslate(result, CGFloat(0), CGFloat(500))
+        result = CGAffineTransformRotate(result, CGFloat(30))
+        ratingStackView.transform = result
         
     }
 
@@ -49,7 +56,7 @@ class ReviewVwCtrl: UIViewController {
            Damping（阻尼）：0-1 之間，越小彈越大
            Velocity：初始彈性速度
         */
-        UIView.animateWithDuration(0.6, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: [], animations: ratingAnimation, completion: nil)
+        UIView.animateWithDuration(5, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: [], animations: ratingAnimation, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
