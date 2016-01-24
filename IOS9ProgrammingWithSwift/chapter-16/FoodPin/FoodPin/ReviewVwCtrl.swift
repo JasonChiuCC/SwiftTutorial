@@ -12,6 +12,10 @@ class ReviewVwCtrl: UIViewController {
 
     @IBOutlet weak var backgroundImgView: UIImageView!
     @IBOutlet weak var ratingStackView  : UIStackView!
+    @IBOutlet weak var dislikeButton    : UIButton!
+    @IBOutlet weak var goodButton       : UIButton!
+    @IBOutlet weak var greatButton      : UIButton!
+    var rating:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +33,26 @@ class ReviewVwCtrl: UIViewController {
         //ratingStackView.transform = CGAffineTransformMakeTranslation(0.0, 500)
         
         // 3.動畫合併使用
+        /*
         let scale       = CGAffineTransformMakeScale(0.0, 0.0)
         let translate   = CGAffineTransformMakeTranslation(0, 500)
         ratingStackView.transform = CGAffineTransformConcat(scale, translate)
-
+        */
+        
         // 4.多動畫合併使用
+        /*
         var result = CGAffineTransformIdentity
         result = CGAffineTransformScale(result, CGFloat(-1), CGFloat(2))
         result = CGAffineTransformTranslate(result, CGFloat(0), CGFloat(500))
         result = CGAffineTransformRotate(result, CGFloat(30))
         ratingStackView.transform = result
+        */
+        
+        // 5. 評價圖案分開動畫
+        let translate = CGAffineTransformMakeTranslation(0, 500)
+        dislikeButton.transform = translate
+        goodButton.transform    = translate
+        greatButton.transform   = translate
         
     }
 
@@ -56,12 +70,42 @@ class ReviewVwCtrl: UIViewController {
            Damping（阻尼）：0-1 之間，越小彈越大
            Velocity：初始彈性速度
         */
-        UIView.animateWithDuration(5, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: [], animations: ratingAnimation, completion: nil)
+        /*
+        UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: [], animations: ratingAnimation, completion: nil)
+        */
+        
+        // 評價按鈕分開動畫
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+            self.dislikeButton.transform = CGAffineTransformIdentity
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.5, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+            self.goodButton.transform = CGAffineTransformIdentity
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.5, delay: 0.4, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+            self.greatButton.transform = CGAffineTransformIdentity
+            }, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func ratingSelected(sender: UIButton) {
+        switch (sender.tag) {
+        case 100: rating = "dislike"
+        case 200: rating = "good"
+        case 300: rating = "great"
+        default: break
+        }
+        
+        /* 處發一個叫做 unwindToDetailView 的轉場（Segue）
+           RestaurantDetailVwCtrl 的 close 方法會被呼叫
+        */
+        self.performSegueWithIdentifier("unwindToDetailView", sender: sender)
     }
     
 

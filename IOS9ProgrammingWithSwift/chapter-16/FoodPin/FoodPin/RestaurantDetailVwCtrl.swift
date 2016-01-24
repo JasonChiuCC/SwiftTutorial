@@ -10,12 +10,10 @@ import UIKit
 
 class RestaurantDetailVwCtrl: UIViewController {
     
-      @IBOutlet weak var restaurantImageView  : UIImageView!
-      @IBOutlet weak var tableView            : UITableView!
-//    @IBOutlet weak var restaurantType       : UILabel!
-//    @IBOutlet weak var restaurantLocation   : UILabel!
-//    @IBOutlet weak var restaurantName       : UILabel!
-
+    @IBOutlet weak var restaurantImageView  : UIImageView!
+    @IBOutlet weak var tableView            : UITableView!
+    @IBOutlet weak var ratingButton         : UIButton!
+    
     var restaurant:Restaurant!
     
     override func viewDidLoad() {
@@ -54,7 +52,13 @@ class RestaurantDetailVwCtrl: UIViewController {
     }
     
     @IBAction func close(segue:UIStoryboardSegue){
-        
+        // 如果轉場的來源是 ReviewVwCtrl
+        if let reviewViewController = segue.sourceViewController as? ReviewVwCtrl {
+            if let rating = reviewViewController.rating {
+                restaurant.rating = rating
+                ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
+            }
+        }
     }
 }
 
