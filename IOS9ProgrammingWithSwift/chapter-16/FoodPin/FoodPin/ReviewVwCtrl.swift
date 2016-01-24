@@ -25,7 +25,7 @@ class ReviewVwCtrl: UIViewController {
         // 1.堆疊視圖加入動畫（初始大小為 0）
         //ratingStackView.transform = CGAffineTransformMakeScale(0.0, 0.0)
         
-        // 2.堆疊視圖加入動畫（初始位置在螢幕下方）
+        // 2.堆疊視圖加入動畫（初始位置的 y 在目前位置 +500 螢幕下方）
         //ratingStackView.transform = CGAffineTransformMakeTranslation(0.0, 500)
         
         // 3.動畫合併使用
