@@ -34,8 +34,14 @@ class ReviewVwCtrl: UIViewController {
     
     // 視圖顯示完成後會呼叫此方法
     override func viewDidAppear(animated: Bool) {
-        // 0.2 表示整個動畫持續的時間
-        UIView.animateWithDuration(0.2, delay: 0.0, options: [], animations: ratingAnimation, completion: nil)
+        // 0.2 表示整個動畫持續的時間（縮放動畫）
+        //UIView.animateWithDuration(0.2, delay: 0.0, options: [], animations: ratingAnimation, completion: nil)
+        
+        /* 彈性動畫
+           Damping（阻尼）：0-1 之間，越小彈越大
+           Velocity：初始彈性速度
+        */
+        UIView.animateWithDuration(0.2, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: ratingAnimation, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
