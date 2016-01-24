@@ -16,6 +16,7 @@
 		E63937771C4FBE2A000C25FE /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63937761C4FBE2A000C25FE /* Restaurant.swift */; };
 		E639377B1C4FCA1B000C25FE /* RestaurantDetailTlbVwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E639377A1C4FCA1B000C25FE /* RestaurantDetailTlbVwCell.swift */; };
 		E6693AE61C537A8D00BA4E74 /* ReviewVwCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6693AE51C537A8D00BA4E74 /* ReviewVwCtrl.swift */; };
+		E6693AE81C54BE3F00BA4E74 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6693AE71C54BE3F00BA4E74 /* MapKit.framework */; };
 		E6C5D8241C4E8805007356BF /* RestaurantDetailVwCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C5D8231C4E8805007356BF /* RestaurantDetailVwCtrl.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		E63937761C4FBE2A000C25FE /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		E639377A1C4FCA1B000C25FE /* RestaurantDetailTlbVwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTlbVwCell.swift; sourceTree = "<group>"; };
 		E6693AE51C537A8D00BA4E74 /* ReviewVwCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewVwCtrl.swift; sourceTree = "<group>"; };
+		E6693AE71C54BE3F00BA4E74 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E6C5D8231C4E8805007356BF /* RestaurantDetailVwCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailVwCtrl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6693AE81C54BE3F00BA4E74 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +51,7 @@
 		E60084B91C47CADA0064D17A = {
 			isa = PBXGroup;
 			children = (
+				E6693AE71C54BE3F00BA4E74 /* MapKit.framework */,
 				E60084C41C47CADA0064D17A /* FoodPin */,
 				E60084C31C47CADA0064D17A /* Products */,
 			);
@@ -111,6 +115,11 @@
 				TargetAttributes = {
 					E60084C11C47CADA0064D17A = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
