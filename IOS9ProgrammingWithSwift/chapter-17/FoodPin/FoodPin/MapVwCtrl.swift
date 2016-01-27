@@ -17,7 +17,11 @@ class MapVwCtrl: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mapView.delegate = self
+        mapView.delegate        = self
+        mapView.showsCompass    = true
+        mapView.showsScale      = true
+        mapView.showsTraffic    = true
+        
         
         // 建立物件
         let geoCoder = CLGeocoder()
