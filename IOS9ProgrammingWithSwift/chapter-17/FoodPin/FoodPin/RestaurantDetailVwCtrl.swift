@@ -51,6 +51,14 @@ class RestaurantDetailVwCtrl: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMap" {
+            let destCtrl = segue.destinationViewController as! MapVwCtrl
+            destCtrl.restaurant = restaurant
+        }
+    }
+    
     @IBAction func close(segue:UIStoryboardSegue){
         // 如果轉場的來源是 ReviewVwCtrl
         if let reviewViewController = segue.sourceViewController as? ReviewVwCtrl {

@@ -186,7 +186,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="kEC-4T-rkq" kind="show" id="M4Z-PS-bSv"/>
+                                    <segue destination="kEC-4T-rkq" kind="show" identifier="showMap" id="M4Z-PS-bSv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -332,10 +332,10 @@
             </objects>
             <point key="canvasLocation" x="2830" y="46"/>
         </scene>
-        <!--View Controller-->
+        <!--Map Vw Ctrl-->
         <scene sceneID="B24-UX-LMt">
             <objects>
-                <viewController id="kEC-4T-rkq" sceneMemberID="viewController">
+                <viewController id="kEC-4T-rkq" customClass="MapVwCtrl" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="edr-D7-8q9"/>
                         <viewControllerLayoutGuide type="bottom" id="xfr-wN-8Sz"/>
@@ -356,6 +356,9 @@
                             <constraint firstItem="9bf-db-Uxj" firstAttribute="leading" secondItem="PM8-Ch-9JD" secondAttribute="leading" id="zPV-uc-Llp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="9bf-db-Uxj" id="aWg-of-uYG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4HQ-9n-0w3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
