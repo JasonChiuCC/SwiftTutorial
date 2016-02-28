@@ -329,12 +329,46 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qa2-oX-f2v">
-                                        <rect key="frame" x="0.0" y="466" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="qa2-oX-f2v">
+                                        <rect key="frame" x="0.0" y="466" width="600" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qa2-oX-f2v" id="7v2-n2-eF0">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有來過嗎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xso-Qb-k2H">
+                                                    <rect key="frame" x="8" y="8" width="68" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qen-ej-mT5">
+                                                    <rect key="frame" x="8" y="33" width="50" height="30"/>
+                                                    <color key="backgroundColor" red="0.92488676309585571" green="0.14600974321365356" blue="0.064618170261383057" alpha="0.92556073589999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="LzZ-0k-F2m"/>
+                                                    </constraints>
+                                                    <color key="tintColor" red="0.92549020049999997" green="0.94117647410000005" blue="0.94509804249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="是的"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezg-Gz-qr2">
+                                                    <rect key="frame" x="66" y="33" width="50" height="30"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="BEZ-hq-lFt"/>
+                                                    </constraints>
+                                                    <color key="tintColor" red="0.92549020049999997" green="0.94117647410000005" blue="0.94509804249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="沒有"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Qen-ej-mT5" firstAttribute="bottom" secondItem="7v2-n2-eF0" secondAttribute="bottomMargin" id="0CC-Ik-Fmo"/>
+                                                <constraint firstItem="Qen-ej-mT5" firstAttribute="baseline" secondItem="Ezg-Gz-qr2" secondAttribute="baseline" id="PdF-I6-fRu"/>
+                                                <constraint firstItem="xso-Qb-k2H" firstAttribute="top" secondItem="7v2-n2-eF0" secondAttribute="topMargin" id="eZb-45-Wdo"/>
+                                                <constraint firstItem="Qen-ej-mT5" firstAttribute="leading" secondItem="xso-Qb-k2H" secondAttribute="leading" id="iZZ-0J-W5X"/>
+                                                <constraint firstItem="Ezg-Gz-qr2" firstAttribute="leading" secondItem="Qen-ej-mT5" secondAttribute="trailing" constant="8" symbolic="YES" id="mGw-PH-Lgc"/>
+                                                <constraint firstItem="xso-Qb-k2H" firstAttribute="leading" secondItem="7v2-n2-eF0" secondAttribute="leadingMargin" id="nhA-mZ-n2O"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
