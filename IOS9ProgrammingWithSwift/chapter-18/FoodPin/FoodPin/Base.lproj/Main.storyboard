@@ -218,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="2021" y="432"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add Restaurant Ctrl-->
         <scene sceneID="Pqw-4C-bdl">
             <objects>
-                <tableViewController id="Xbu-gg-k93" sceneMemberID="viewController">
+                <tableViewController id="Xbu-gg-k93" customClass="AddRestaurantCtrl" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cAW-DW-pb7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

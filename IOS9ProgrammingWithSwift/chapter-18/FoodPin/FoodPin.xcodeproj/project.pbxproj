@@ -15,6 +15,7 @@
 		E60084DC1C47ED360064D17A /* RestaurantTlbVwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60084DB1C47ED360064D17A /* RestaurantTlbVwCell.swift */; };
 		E63937771C4FBE2A000C25FE /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63937761C4FBE2A000C25FE /* Restaurant.swift */; };
 		E639377B1C4FCA1B000C25FE /* RestaurantDetailTlbVwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E639377A1C4FCA1B000C25FE /* RestaurantDetailTlbVwCell.swift */; };
+		E644B2CA1C99B57A00B17A2A /* AddRestaurantCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E644B2C91C99B57A00B17A2A /* AddRestaurantCtrl.swift */; };
 		E649C3F11C58F90400699845 /* MapVwCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649C3F01C58F90400699845 /* MapVwCtrl.swift */; };
 		E6693AE61C537A8D00BA4E74 /* ReviewVwCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6693AE51C537A8D00BA4E74 /* ReviewVwCtrl.swift */; };
 		E6693AE81C54BE3F00BA4E74 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6693AE71C54BE3F00BA4E74 /* MapKit.framework */; };
@@ -32,6 +33,7 @@
 		E60084DB1C47ED360064D17A /* RestaurantTlbVwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTlbVwCell.swift; sourceTree = "<group>"; };
 		E63937761C4FBE2A000C25FE /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		E639377A1C4FCA1B000C25FE /* RestaurantDetailTlbVwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTlbVwCell.swift; sourceTree = "<group>"; };
+		E644B2C91C99B57A00B17A2A /* AddRestaurantCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestaurantCtrl.swift; sourceTree = "<group>"; };
 		E649C3F01C58F90400699845 /* MapVwCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVwCtrl.swift; sourceTree = "<group>"; };
 		E6693AE51C537A8D00BA4E74 /* ReviewVwCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewVwCtrl.swift; sourceTree = "<group>"; };
 		E6693AE71C54BE3F00BA4E74 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				E60084D11C47CADA0064D17A /* Info.plist */,
+				E644B2C91C99B57A00B17A2A /* AddRestaurantCtrl.swift */,
 				E60084C51C47CADA0064D17A /* AppDelegate.swift */,
 				E649C3F01C58F90400699845 /* MapVwCtrl.swift */,
 				E63937761C4FBE2A000C25FE /* Restaurant.swift */,
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E63937771C4FBE2A000C25FE /* Restaurant.swift in Sources */,
+				E644B2CA1C99B57A00B17A2A /* AddRestaurantCtrl.swift in Sources */,
 				E639377B1C4FCA1B000C25FE /* RestaurantDetailTlbVwCell.swift in Sources */,
 				E649C3F11C58F90400699845 /* MapVwCtrl.swift in Sources */,
 				E60084C61C47CADA0064D17A /* AppDelegate.swift in Sources */,
