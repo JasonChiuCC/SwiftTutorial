@@ -80,7 +80,13 @@
                             <outlet property="delegate" destination="1wB-dz-Bji" id="Spt-6d-4Qx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Food Pin" id="WvH-et-leg"/>
+                    <navigationItem key="navigationItem" title="Food Pin" id="WvH-et-leg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="H1w-C4-KhJ">
+                            <connections>
+                                <segue destination="BYQ-aK-J7v" kind="presentation" identifier="addRestaurant" id="ECp-th-xul"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAW-y5-HoX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vz-ZD-v9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2801" y="432"/>
+            <point key="canvasLocation" x="2021" y="432"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Pqw-4C-bdl">
@@ -255,7 +261,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7P-Q9-eRX">
                                                     <rect key="frame" x="8" y="8" width="34" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="餐廳名稱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IEa-vx-e2V">
@@ -283,7 +289,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="類型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoR-Bg-0sP">
                                                     <rect key="frame" x="8" y="8" width="34" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="餐廳類型" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUa-6K-Wxm">
@@ -311,7 +317,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oM-su-MLi">
                                                     <rect key="frame" x="8" y="8" width="34" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="餐廳位置" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EYA-wc-HDg">
@@ -339,7 +345,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有來過嗎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xso-Qb-k2H">
                                                     <rect key="frame" x="8" y="8" width="68" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qen-ej-mT5">
@@ -379,11 +385,18 @@
                             <outlet property="delegate" destination="Xbu-gg-k93" id="bkI-je-mdk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="TlK-6e-BwV"/>
+                    <navigationItem key="navigationItem" id="TlK-6e-BwV">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="AJT-IQ-W96">
+                            <connections>
+                                <segue destination="PP4-ZP-jT2" kind="unwind" unwindAction="unownedToHomeScreen:" id="Rc7-R1-oyF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHb-Jr-ggc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PP4-ZP-jT2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2048" y="1110"/>
+            <point key="canvasLocation" x="2021" y="1217"/>
         </scene>
         <!--Review Vw Ctrl-->
         <scene sceneID="khh-8W-pkt">
@@ -503,7 +516,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cvj-ax-Hod" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yBI-RQ-bm4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3642" y="36"/>
+            <point key="canvasLocation" x="2928" y="100"/>
         </scene>
         <!--Map Vw Ctrl-->
         <scene sceneID="B24-UX-LMt">
@@ -535,7 +548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4HQ-9n-0w3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3642" y="734"/>
+            <point key="canvasLocation" x="2928" y="780"/>
         </scene>
         <!--Restaurant Tlb Vw Ctrl-->
         <scene sceneID="YHv-gR-txf">
@@ -641,7 +654,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tcz-4i-1Bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1274" y="1110"/>
+            <point key="canvasLocation" x="1274" y="1217"/>
         </scene>
     </scenes>
     <resources>
