@@ -356,6 +356,9 @@
                                                     </constraints>
                                                     <color key="tintColor" red="0.92549020049999997" green="0.94117647410000005" blue="0.94509804249999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="是的"/>
+                                                    <connections>
+                                                        <action selector="toggleBeenHereButton:" destination="Xbu-gg-k93" eventType="touchUpInside" id="Uvd-Gg-8c8"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezg-Gz-qr2">
                                                     <rect key="frame" x="66" y="33" width="50" height="30"/>
@@ -365,6 +368,9 @@
                                                     </constraints>
                                                     <color key="tintColor" red="0.92549020049999997" green="0.94117647410000005" blue="0.94509804249999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="沒有"/>
+                                                    <connections>
+                                                        <action selector="toggleBeenHereButton:" destination="Xbu-gg-k93" eventType="touchUpInside" id="dkF-OY-whr"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -391,9 +397,19 @@
                                 <segue destination="PP4-ZP-jT2" kind="unwind" unwindAction="unownedToHomeScreen:" id="Rc7-R1-oyF"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="m5S-U0-lPu">
+                            <connections>
+                                <action selector="save:" destination="Xbu-gg-k93" id="xR6-D8-leh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="TEQ-ah-n0T" id="4wX-Ts-i6h"/>
+                        <outlet property="locationTextField" destination="EYA-wc-HDg" id="B9e-Yh-vHG"/>
+                        <outlet property="nameTextField" destination="IEa-vx-e2V" id="Ths-j1-uBe"/>
+                        <outlet property="noButton" destination="Ezg-Gz-qr2" id="n7m-9G-cue"/>
+                        <outlet property="typeTextField" destination="rUa-6K-Wxm" id="lFl-JH-fc2"/>
+                        <outlet property="yesButton" destination="Qen-ej-mT5" id="rbE-Vj-Nrh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHb-Jr-ggc" userLabel="First Responder" sceneMemberID="firstResponder"/>
