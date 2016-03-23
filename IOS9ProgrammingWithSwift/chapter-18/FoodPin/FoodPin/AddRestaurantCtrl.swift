@@ -10,6 +10,8 @@ import UIKit
 
 class AddRestaurantCtrl: UITableViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +36,7 @@ class AddRestaurantCtrl: UITableViewController {
                 let imagePicker = UIImagePickerController()   // 建立實體
                 imagePicker.allowsEditing   = false
                 imagePicker.sourceType      = .PhotoLibrary
+                imagePicker.delegate        = self
                 self.presentViewController(imagePicker, animated: true, completion: nil)
             }
         }
@@ -95,5 +98,39 @@ class AddRestaurantCtrl: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
+
+// 使用代理目的是要和 UIImagePickerController 實體溝通
+extension AddRestaurantCtrl:UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+
+    // 照片庫點選照片後會呼叫此方法
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        imageView.image         = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imageView.contentMode   = UIViewContentMode.ScaleAspectFill
+        imageView.clipsToBounds = true
+        
+        // 以下為約束條件
+        let leadingConstraint   = NSLayoutConstraint(item: imageView,           attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal,
+                                                   toItem: imageView.superview, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        
+        let trailingConstraint  = NSLayoutConstraint(item: imageView,           attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal,
+                                                   toItem: imageView.superview, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+        
+        let topConstraint       = NSLayoutConstraint(item: imageView,           attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal,
+                                                   toItem: imageView.superview, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        
+        let bottomConstraint    = NSLayoutConstraint(item: imageView,           attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal,
+                                                   toItem: imageView.superview, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        
+        leadingConstraint.active    = true
+        trailingConstraint.active   = true
+        topConstraint.active        = true
+        bottomConstraint.active     = true
+        dismissViewControllerAnimated(true, completion: nil)// 關閉照片挑選器
+    }
+}
+
+
+
+
+
