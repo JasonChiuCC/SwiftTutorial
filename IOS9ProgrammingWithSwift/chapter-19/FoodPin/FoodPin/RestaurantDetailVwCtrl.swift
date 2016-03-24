@@ -1,0 +1,115 @@
+//
+//  RestaurantDetailVwCtrl.swift
+//  FoodPin
+//
+//  Created by dah.com on 2016/1/19.
+//  Copyright © 2016年 Jason. All rights reserved.
+//
+
+import UIKit
+
+class RestaurantDetailVwCtrl: UIViewController {
+    
+    @IBOutlet weak var restaurantImageView  : UIImageView!
+    @IBOutlet weak var tableView            : UITableView!
+    @IBOutlet weak var ratingButton         : UIButton!
+    
+    var restaurant:Restaurant!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        restaurantImageView.image           = UIImage(named: restaurant.image)
+        restaurantImageView.clipsToBounds   = true
+        
+        // 更改 TLB 背景顏色
+        tableView.backgroundColor = UIColor(red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 0.2) // 淺灰色
+        
+        // 刪除 TLB 分隔線
+        tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        // 更改 TLB 分隔線顏色
+        tableView.separatorColor  = UIColor(red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 0.2) // 淺灰色
+        
+        // 設定導航列標題文字
+        title = restaurant.name
+        
+        // 使用 self sizing cells
+        tableView.estimatedRowHeight = 36.0                     // 估算 Cell 的高度，也是目前 Cell 的高度
+        tableView.rowHeight = UITableViewAutomaticDimension     // IOS 9 預設高度
+    }
+    
+    // 視圖準備要顯示時呼叫
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMap" {
+            let destCtrl = segue.destinationViewController as! MapVwCtrl
+            destCtrl.restaurant = restaurant
+        }
+    }
+    
+    @IBAction func close(segue:UIStoryboardSegue){
+        // 如果轉場的來源是 ReviewVwCtrl
+        if let reviewViewController = segue.sourceViewController as? ReviewVwCtrl {
+            if let rating = reviewViewController.rating {
+                restaurant.rating = rating
+                ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
+            }
+        }
+    }
+}
+
+extension RestaurantDetailVwCtrl:UITableViewDataSource,UITableViewDelegate {
+    // MARK: - TlbVwDataSource（提供表格資料）
+    /* TLB 中每個區段有幾列（Row） */
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    /* TLB 在顯示時會被呼叫 */
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cellId  = "Cell"
+        let cell    = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as! RestaurantDetailTlbVwCell
+        
+        // 讓 Cell 背景透明（使用 TLB 背景顏色）
+        cell.backgroundColor = UIColor.clearColor()
+        
+        // 設定 cell
+        switch (indexPath.row) {
+        case 0:
+            cell.fieldLabel.text = "名稱"
+            cell.valueLabel.text = restaurant.name
+        case 1:
+            cell.fieldLabel.text = "類型"
+            cell.valueLabel.text = restaurant.type
+        case 2:
+            cell.fieldLabel.text = "地點"
+            cell.valueLabel.text = restaurant.location
+        case 3:
+            cell.fieldLabel.text = "電話"
+            cell.valueLabel.text = restaurant.phoneNumber
+        case 4:
+            cell.fieldLabel.text = "是否來過"
+            cell.valueLabel.text = restaurant.isVisited ? "來過了" : "沒來過"
+        default:
+            cell.fieldLabel.text = ""
+            cell.valueLabel.text = ""
+        }
+
+        // 設定圖片圓角
+        //cell.thumbnailImageView.layer.cornerRadius  = 30.0
+        //cell.thumbnailImageView.clipsToBounds       = true
+        return cell
+    }
+}
