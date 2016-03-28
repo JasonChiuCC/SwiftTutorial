@@ -19,7 +19,7 @@ class RestaurantDetailVwCtrl: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        restaurantImageView.image           = UIImage(named: restaurant.image)
+        restaurantImageView.image           = UIImage(data: restaurant.image!)
         restaurantImageView.clipsToBounds   = true
         
         // 更改 TLB 背景顏色
@@ -101,7 +101,9 @@ extension RestaurantDetailVwCtrl:UITableViewDataSource,UITableViewDelegate {
             cell.valueLabel.text = restaurant.phoneNumber
         case 4:
             cell.fieldLabel.text = "是否來過"
-            cell.valueLabel.text = restaurant.isVisited ? "來過了" : "沒來過"
+            if let isVisited = restaurant.isVisited?.boolValue {
+                cell.valueLabel.text = isVisited ? "來過了" : "沒來過"
+            }
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""

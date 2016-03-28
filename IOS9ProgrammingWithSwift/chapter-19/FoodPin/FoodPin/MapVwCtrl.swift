@@ -83,7 +83,7 @@ extension MapVwCtrl:MKMapViewDelegate {
         }
         
         let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
-        leftIconView.image = UIImage(named: restaurant.image)
+        leftIconView.image = UIImage(data: restaurant.image!)
         annotationView?.leftCalloutAccessoryView = leftIconView
         
         // Pin color customization
