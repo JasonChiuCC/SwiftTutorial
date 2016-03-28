@@ -17,6 +17,7 @@
 		E639377B1C4FCA1B000C25FE /* RestaurantDetailTlbVwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E639377A1C4FCA1B000C25FE /* RestaurantDetailTlbVwCell.swift */; };
 		E644B2CA1C99B57A00B17A2A /* AddRestaurantCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E644B2C91C99B57A00B17A2A /* AddRestaurantCtrl.swift */; };
 		E649C3F11C58F90400699845 /* MapVwCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649C3F01C58F90400699845 /* MapVwCtrl.swift */; };
+		E654467A1CA94FF500060B81 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E65446781CA94FF500060B81 /* FoodPin.xcdatamodeld */; };
 		E6693AE61C537A8D00BA4E74 /* ReviewVwCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6693AE51C537A8D00BA4E74 /* ReviewVwCtrl.swift */; };
 		E6693AE81C54BE3F00BA4E74 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6693AE71C54BE3F00BA4E74 /* MapKit.framework */; };
 		E6C5D8241C4E8805007356BF /* RestaurantDetailVwCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C5D8231C4E8805007356BF /* RestaurantDetailVwCtrl.swift */; };
@@ -35,6 +36,7 @@
 		E639377A1C4FCA1B000C25FE /* RestaurantDetailTlbVwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTlbVwCell.swift; sourceTree = "<group>"; };
 		E644B2C91C99B57A00B17A2A /* AddRestaurantCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestaurantCtrl.swift; sourceTree = "<group>"; };
 		E649C3F01C58F90400699845 /* MapVwCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVwCtrl.swift; sourceTree = "<group>"; };
+		E65446791CA94FF500060B81 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
 		E6693AE51C537A8D00BA4E74 /* ReviewVwCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewVwCtrl.swift; sourceTree = "<group>"; };
 		E6693AE71C54BE3F00BA4E74 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E6C5D8231C4E8805007356BF /* RestaurantDetailVwCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailVwCtrl.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				E60084D71C47CD530064D17A /* RestaurantTlbVwCtrl.swift */,
 				E6693AE51C537A8D00BA4E74 /* ReviewVwCtrl.swift */,
 				E60084CC1C47CADA0064D17A /* Assets.xcassets */,
+				E65446781CA94FF500060B81 /* FoodPin.xcdatamodeld */,
 				E60084CE1C47CADA0064D17A /* LaunchScreen.storyboard */,
 				E60084C91C47CADA0064D17A /* Main.storyboard */,
 			);
@@ -170,6 +173,7 @@
 				E639377B1C4FCA1B000C25FE /* RestaurantDetailTlbVwCell.swift in Sources */,
 				E649C3F11C58F90400699845 /* MapVwCtrl.swift in Sources */,
 				E60084C61C47CADA0064D17A /* AppDelegate.swift in Sources */,
+				E654467A1CA94FF500060B81 /* FoodPin.xcdatamodeld in Sources */,
 				E6693AE61C537A8D00BA4E74 /* ReviewVwCtrl.swift in Sources */,
 				E6C5D8241C4E8805007356BF /* RestaurantDetailVwCtrl.swift in Sources */,
 				E60084DC1C47ED360064D17A /* RestaurantTlbVwCell.swift in Sources */,
@@ -326,6 +330,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E65446781CA94FF500060B81 /* FoodPin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E65446791CA94FF500060B81 /* FoodPin.xcdatamodel */,
+			);
+			currentVersion = E65446791CA94FF500060B81 /* FoodPin.xcdatamodel */;
+			path = FoodPin.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E60084BA1C47CADA0064D17A /* Project object */;
 }
