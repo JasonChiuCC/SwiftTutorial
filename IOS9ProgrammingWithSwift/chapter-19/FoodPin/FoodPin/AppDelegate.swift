@@ -32,6 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         注意要先去 Target -> Info -> 新增 View controller-based status bar appearance 並關閉才有作用 */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+        
+        let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        print(paths[0])
+        
         return true
     }
 

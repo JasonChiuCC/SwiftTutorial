@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddRestaurantCtrl: UITableViewController {
 
@@ -17,7 +18,7 @@ class AddRestaurantCtrl: UITableViewController {
     @IBOutlet weak var yesButton            : UIButton!
     @IBOutlet weak var noButton             : UIButton!
     var isVisited = true
-    
+    var restaurant:Restaurant!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,48 @@ class AddRestaurantCtrl: UITableViewController {
         print("類型: \(type)")
         print("地點: \(location)")
         print("是否來過: \(isVisited)")
+        
+        
+        // 使用 CoreData 儲存
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate )?.managedObjectContext { // 取得 AppDelegate
+            // 針對 Restaurant Entity 建立託管物件
+            restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant", inManagedObjectContext: managedObjectContext) as! Restaurant
+            
+            restaurant.name         = name!
+            restaurant.type         = type!
+            restaurant.location     = location!
+            restaurant.isVisited    = isVisited
+            if let restaurantImage = imageView.image {
+                // 以 PNG 格式取得圖像
+                restaurant.image = UIImagePNGRepresentation(restaurantImage)
+            }
+            
+            // 儲存
+            do {
+                try managedObjectContext.save()
+            }catch{
+                print(error)
+                return
+            }
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         // Dismiss the view controller
         dismissViewControllerAnimated(true, completion: nil)
