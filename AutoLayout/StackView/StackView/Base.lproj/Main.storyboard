@@ -17,21 +17,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gjF-F5-vHs">
-                                <rect key="frame" x="255" y="285" width="106" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="uBU-kZ-qft">
+                                <rect key="frame" x="53" y="162" width="493" height="276"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2w-D5-OGe">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="清除"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3c-C5-NJE">
-                                        <rect key="frame" x="38" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="取消"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ga-6H-0oi">
-                                        <rect key="frame" x="76" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="存擋"/>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="xc0-Sx-gAq">
+                                        <rect key="frame" x="0.0" y="0.0" width="493" height="72"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3e-aG-7g7">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="72"/>
+                                                <color key="backgroundColor" red="0.0" green="0.793160080909729" blue="0.28780937194824219" alpha="0.58999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="按鈕1"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWy-NZ-dFz">
+                                                <rect key="frame" x="181" y="0.0" width="131" height="72"/>
+                                                <color key="backgroundColor" red="0.89482653141021729" green="0.14760464429855347" blue="0.20618388056755066" alpha="0.58999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="按鈕2"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1b-Ah-blF">
+                                                <rect key="frame" x="362" y="0.0" width="131" height="72"/>
+                                                <color key="backgroundColor" red="0.92987668514251709" green="0.91999661922454834" blue="0.098180942237377167" alpha="0.58999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <state key="normal" title="按鈕3"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="4m2-2I-QNe">
+                                        <rect key="frame" x="0.0" y="102" width="493" height="72"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIl-ge-dmI">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="72"/>
+                                                <color key="backgroundColor" red="0.0" green="0.793160080909729" blue="0.28780937194824219" alpha="0.58999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="按鈕4"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRa-5T-nrp">
+                                                <rect key="frame" x="181" y="0.0" width="131" height="72"/>
+                                                <color key="backgroundColor" red="0.89482653141021729" green="0.14760464429855347" blue="0.20618388056755066" alpha="0.58999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="按鈕5"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omP-al-VYz">
+                                                <rect key="frame" x="362" y="0.0" width="131" height="72"/>
+                                                <color key="backgroundColor" red="0.92987668514251709" green="0.91999661922454834" blue="0.098180942237377167" alpha="0.58999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <state key="normal" title="按鈕6"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="8hT-Ny-0dW">
+                                        <rect key="frame" x="0.0" y="204" width="493" height="72"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zet-HF-omp">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="72"/>
+                                                <color key="backgroundColor" red="0.0" green="0.793160080909729" blue="0.28780937194824219" alpha="0.58999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="按鈕7"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEt-B1-JiA">
+                                                <rect key="frame" x="181" y="0.0" width="131" height="72"/>
+                                                <color key="backgroundColor" red="0.89482653141021729" green="0.14760464429855347" blue="0.20618388056755066" alpha="0.58999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="按鈕8"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c35-Fd-ilz">
+                                                <rect key="frame" x="362" y="0.0" width="131" height="72"/>
+                                                <color key="backgroundColor" red="0.92987668514251709" green="0.91999661922454834" blue="0.098180942237377167" alpha="0.58999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <state key="normal" title="按鈕9"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -40,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="670"/>
+            <point key="canvasLocation" x="1367" y="675"/>
         </scene>
     </scenes>
 </document>
