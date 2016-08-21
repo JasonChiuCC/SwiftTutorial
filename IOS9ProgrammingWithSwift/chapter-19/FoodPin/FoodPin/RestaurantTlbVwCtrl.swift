@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class RestaurantTlbVwCtrl: UITableViewController {
 
     var restaurants:[Restaurant] = []
+    var fetchResultCtrl:NSFetchedResultsController!
+    
     
     // 只有第一次視圖顯示時被呼叫
     override func viewDidLoad() {
@@ -21,6 +24,30 @@ class RestaurantTlbVwCtrl: UITableViewController {
         // 使用 self sizing cells
         tableView.estimatedRowHeight = 36.0                     // 估算 Cell 的高度，也是目前 Cell 的高度
         tableView.rowHeight = UITableViewAutomaticDimension     // IOS 9 預設高度
+        
+        
+        let fetchReq    = NSFetchRequest(entityName: "Restaurant")
+        let sortDes     = NSSortDescriptor(key: "name", ascending: true) // 用 name 做升續排序
+        fetchReq.sortDescriptors = [sortDes]
+        
+        // 使用 CoreData 儲存
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate )?.managedObjectContext { // 取得 AppDelegate
+            
+            fetchResultCtrl = NSFetchedResultsController(fetchRequest: fetchReq, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultCtrl.delegate = self
+            
+            // 儲存
+            do {
+                try fetchResultCtrl.performFetch()
+                restaurants = fetchResultCtrl.fetchedObjects as! [Restaurant]
+            }catch{
+                print(error)
+                return
+            }
+            
+        }
+        
+        
     }
     
     // 視圖準備要顯示時呼叫
@@ -202,3 +229,13 @@ class RestaurantTlbVwCtrl: UITableViewController {
         }
     }
 }
+
+//此協定是不管何時，當控制器讀取的結果有改變，就會使用代理的方法
+extension RestaurantTlbVwCtrl:NSFetchedResultsControllerDelegate {
+    
+    
+    
+    
+}
+
+

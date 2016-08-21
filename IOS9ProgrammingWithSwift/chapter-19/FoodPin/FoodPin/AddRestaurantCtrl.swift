@@ -108,24 +108,7 @@ class AddRestaurantCtrl: UITableViewController {
             }
             
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         // Dismiss the view controller
         dismissViewControllerAnimated(true, completion: nil)
     }
